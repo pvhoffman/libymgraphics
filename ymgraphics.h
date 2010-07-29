@@ -53,41 +53,47 @@ enum {
 //---------------------------------------------------------------------------
 // Bitmap padding options
 enum {
-  bmpWithPadding
-  , bmpWithoutPadding
+        bmpWithPadding
+        , bmpWithoutPadding
 };
 //---------------------------------------------------------------------------
 // Ghostscript messages
 enum {
-  GSDLL_STDIN    = 1
-  , GSDLL_STDOUT = 2
-  , GSDLL_DEVICE = 3
-  , GSDLL_SYNC   = 4
-  , GSDLL_PAGE   = 5
-  , GSDLL_SIZE   = 6
-  , GSDLL_POLL   = 7
+        GSDLL_STDIN    = 1
+        , GSDLL_STDOUT = 2
+        , GSDLL_DEVICE = 3
+        , GSDLL_SYNC   = 4
+        , GSDLL_PAGE   = 5
+        , GSDLL_SIZE   = 6
+        , GSDLL_POLL   = 7
 };
 //---------------------------------------------------------------------------
 // Ghostscript conversion types - not all are supported
 enum {
-  rtBmp16 = 1
-  , rtBmp16m
-  , rtBmp256
-  , rtBmp32b
-  , rtBmpgray
-  , rtBmpmono
-  , rtJpeg
-  , rtJpegcmyk
-  , rtJpeggray
-  , rtPdfwrite
-  , rtPng16
-  , rtPng16m
-  , rtPng256
-  , rtPngalpha
-  , rtPnggray
-  , rtPngmono
-  , rtTxtwrite
-  , rtPostscript
+        rtBmp16 = 1
+        , rtBmp16m
+        , rtBmp256
+        , rtBmp32b
+        , rtBmpgray
+        , rtBmpmono
+        , rtJpeg
+        , rtJpegcmyk
+        , rtJpeggray
+        , rtPdfwrite
+        , rtPng16
+        , rtPng16m
+        , rtPng256
+        , rtPngalpha
+        , rtPnggray
+        , rtPngmono
+        , rtTxtwrite
+        , rtPostscript
+};
+//---------------------------------------------------------------------------
+// Supported fonts for postscript character widthing
+enum {
+  fntHelvetica = 1
+  , fntHelveticaBlackCondensed
 };
 
 //---------------------------------------------------------------------------
@@ -98,6 +104,8 @@ YM_NS_END // types
 // for global variables
 YM_NS_DEF(global)
 extern const unsigned long kTiffHeader;
+extern const unsigned short helveticaCharWidth[255];
+extern const unsigned short helveticaBlackCondensedCharWidth[255];
 YM_NS_END
 //---------------------------------------------------------------------------
 // util namespace
