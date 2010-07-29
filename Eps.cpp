@@ -29,6 +29,7 @@ void Eps::open(const char* fileName)
         _file = fopen(fileName, "rb");
         if (!_file)
                 throw std::runtime_error(std::string("Cannot open file ") + std::string(fileName));
+        _fileName = strdup(fileName);
 
 }
 //---------------------------------------------------------------------------
@@ -72,10 +73,10 @@ void Eps::positionToBeginning()
         fseek(_file, pos, SEEK_SET);
 }
 //---------------------------------------------------------------------------
-BoundingBox_t Eps::getBoundingBox()
+YM_NS_SCOPE(types)BoundingBox_t Eps::getBoundingBox()
 {
         YM_NS_USE(util);
-        BoundingBox_t bbox;
+        YM_NS_SCOPE(types)BoundingBox_t bbox;
         char buffer[EPSBufferSize];
         const char *sbox = "BoundingBox:";
         const char *cptr;
@@ -127,7 +128,7 @@ void Eps::sendToFile(FILE *fd, const float& scaleX, const float& scaleY, const f
 {
         std::stringstream ss;
         std::string outs;
-        BoundingBox_t bbox = getBoundingBox();
+        YM_NS_SCOPE(types)BoundingBox_t bbox = getBoundingBox();
 
         ss << "\n gsave"
         << "\n mark"
@@ -143,9 +144,10 @@ void Eps::sendToFile(FILE *fd, const float& scaleX, const float& scaleY, const f
 
         rawSendToFile(fd);
 
+        ss.str(std::string(""));
         ss << "\n%%EndDocument"
         << "\n cleartomark"
-        << "\n level0 restore\n";
+        << "\n level0 restore grestore\n";
         outs.assign(ss.str());
         fwrite(outs.c_str(), 1, outs.length(), fd);
 }

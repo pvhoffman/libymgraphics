@@ -4,6 +4,8 @@
 #pragma hdrstop
 USEUNIT("Eps.cpp");
 USEUNIT("ymgraphics.cpp");
+USEUNIT("Bitmap.cpp");
+USEUNIT("Ghostscript.cpp");
 //---------------------------------------------------------------------------
 #define Library
 
