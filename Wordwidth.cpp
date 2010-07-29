@@ -38,16 +38,17 @@ float Wordwidth::getWordWidth(const int& font, const char* str, const float& swi
         }
         return width;
 }
+//---------------------------------------------------------------------------
 const char* Wordwidth::getWordBoundries()
 {
         return _wordBoundries;
 }
+//---------------------------------------------------------------------------
 void Wordwidth::setWordBoundries(const char* boundries)
 {
         if (_wordBoundries) free(_wordBoundries);
         _wordBoundries = strdup(boundries);
 }
-
 //---------------------------------------------------------------------------
 YM_NS_END
 //---------------------------------------------------------------------------

@@ -4,7 +4,8 @@
   <MACROS>
     <VERSION value="BCB.05.03"/>
     <PROJECT value="libymgraphics.lib"/>
-    <OBJFILES value="Eps.obj ymgraphics.obj Bitmap.obj Ghostscript.obj Charwidth.obj"/>
+    <OBJFILES value="Eps.obj ymgraphics.obj Bitmap.obj Ghostscript.obj Charwidth.obj 
+      Wordwidth.obj"/>
     <RESFILES value=""/>
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
