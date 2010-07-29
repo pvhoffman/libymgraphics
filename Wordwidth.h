@@ -9,7 +9,7 @@ YM_NS_DEF(wordwidth)
 class Wordwidth
 {
 private:
-  char* _wordBoundries;
+        char* _wordBoundries;
 public:
         Wordwidth();
         ~Wordwidth();
