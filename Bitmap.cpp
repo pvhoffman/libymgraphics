@@ -115,7 +115,7 @@ unsigned char* Bitmap::getBitmapBits(const int& pad) const
         } else {
                 // Read a row at a time
                 unsigned int rowSize = _bmpinfoheader.biWidth * 3;
-                for (unsigned int y = 0;y < _bmpinfoheader.biHeight;y++) {
+                for (int y = 0;y < _bmpinfoheader.biHeight;y++) {
                         fread(&bits[rowSize*y], rowSize, 1, _file);
                         fseek(_file, padding, SEEK_CUR);
                 }

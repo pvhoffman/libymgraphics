@@ -103,10 +103,20 @@ YM_NS_END // types
 // global namespace
 // for global variables
 YM_NS_DEF(global)
+//---------------------------------------------------------------------------
+// EPS Tiff header marker.
 extern const unsigned long kTiffHeader;
+//---------------------------------------------------------------------------
+// Helvetica black condensed widths taken from AFM.
 extern const unsigned short helveticaCharWidth[255];
+//---------------------------------------------------------------------------
+// Helvetica black condensed widths taken from AFM.
 extern const unsigned short helveticaBlackCondensedCharWidth[255];
-YM_NS_END
+//---------------------------------------------------------------------------
+// Word boundries
+extern const char* defaultWordBoundries;
+//---------------------------------------------------------------------------
+YM_NS_END // global
 //---------------------------------------------------------------------------
 // util namespace
 // for utility functions
